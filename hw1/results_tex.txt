@@ -1,0 +1,19 @@
+% LaTeX table generated from results.csv
+% Columns: model, svmguide1, cod-rna, gisette_scale
+\begin{table}[ht]
+\centering
+\caption{Classification results (from results.csv)}
+\begin{tabular}{lccc}
+\hline
+\textbf{Model} & \textbf{svmguide1} & \textbf{cod-rna} & \textbf{gisette\_scale} \\
+\hline
+LR & 95.50\% & 95.13\% & 98.10\% \\
+LDA & 89.00\% & 94.94\% & 90.70\% \\
+GaussianNB & 93.85\% & 77.03\% & 75.30\% \\
+BernoulliNB & 50.35\% & 66.67\% & 90.10\% \\
+SVM & 96.15\% & 96.33\% & 97.70\% \\
+MLP & 96.25\% & 95.05\% & 97.30\% \\
+\hline
+\end{tabular}
+\label{tab:results}
+\end{table}
