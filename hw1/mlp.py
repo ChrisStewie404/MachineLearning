@@ -39,12 +39,13 @@ if __name__ == "__main__":
     ])
 
     data_sets = ['svmguide1','cod-rna','gisette_scale']
-    for data_set in data_sets:
-        print(f"Data set: {data_set}")
-        y_train, x_train = load_libsvm("./data/"+data_set)
-        y_test, x_test = load_libsvm("./data/"+data_set+".t")
+    data_set = data_sets[0]
+    y_train, x_train = load_libsvm("./data/"+data_set)
+    y_test, x_test = load_libsvm("./data/"+data_set+".t")
+    results = []
+    for i in range(2,17):
         solver = 'lbfgs'
-        hidden_layer_sizes = (16,4)
+        hidden_layer_sizes = (4,i)
         clf = MLPClassifier(solver=solver,
                             alpha=1e-5,
                             hidden_layer_sizes=hidden_layer_sizes,
@@ -58,3 +59,5 @@ if __name__ == "__main__":
 
         predictions = clf.predict(x_test)
         accuracy = get_accuracy(y_test,predictions)
+        results.append("{:.2f}%".format(accuracy*100))
+    print(results)
